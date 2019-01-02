@@ -1,7 +1,6 @@
-pragma solidity 0.4.20;
+pragma solidity ^0.5.0;
 
 contract Election {
-    // Model a Candidate
     struct Candidate {
         uint id;
         string name;
@@ -10,10 +9,9 @@ contract Election {
 
     // Store accounts that have voted
     mapping(address => bool) public voters;
-    // Store Candidates
-    // Fetch Candidate
+
     mapping(uint => Candidate) public candidates;
-    // Store Candidates Count
+
     uint public candidatesCount;
 
     // voted event
@@ -21,13 +19,13 @@ contract Election {
         uint indexed _candidateId
     );
 
-    function Election () public {
-        addCandidate("Candidate 1");
-        addCandidate("Candidate 2");
+    constructor() public {
+        addCandidate("Donald Trump");
+        addCandidate("Hillary Clinton");
     }
 
-    function addCandidate (string _name) private {
-        candidatesCount ++;
+    function addCandidate (string memory _name) private {
+        candidatesCount++;
         candidates[candidatesCount] = Candidate(candidatesCount, _name, 0);
     }
 
@@ -45,6 +43,6 @@ contract Election {
         candidates[_candidateId].voteCount ++;
 
         // trigger voted event
-        votedEvent(_candidateId);
+        emit votedEvent(_candidateId);
     }
 }
