@@ -5,7 +5,7 @@
   "scripts": {
     "copy-contracts": "cp -f build/contracts/*.json src/contracts/",
     "dev-server": "lite-server -c ./server-config",
-    "start": "npm run copy-contracts && dev-server"
+    "dev": "npm run copy-contracts && npm run dev-server"
   },
   "author": "",
   "license": "ISC",

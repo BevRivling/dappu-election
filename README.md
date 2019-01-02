@@ -45,17 +45,10 @@ Confirm the dapp functions exist:
 
 Type `.exit` to exit the console
 
-7) Copy the contracts into `src/contracts`
+7) Run development server
 
 ```
-npm run copy-contracts
-```
-
-8) Run local website (on MacOS use python SimpleHTTPServer)
-
-```
-cd src
-python -m SimpleHTTPServer
+npm run dev
 ```
 
 Open [http://localhost:8000](http://localhost:8000)
