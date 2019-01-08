@@ -6,7 +6,7 @@ contract Election {
         string name;
         uint voteCount;
     }
-
+    // HEY I@M A COMMMENTTT
     // Store accounts that have voted
     mapping(address => bool) public voters;
 
